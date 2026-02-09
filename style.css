@@ -1,0 +1,152 @@
+:root{
+  --bg:#070a10;
+  --card:#0b1220;
+  --card2:#0f1a2e;
+  --text:#e5e7eb;
+  --muted:#9ca3af;
+  --gold:#d4af37;
+  --gold2:#b8942a;
+  --line:#1f2a44;
+  --danger:#7f1d1d;
+}
+
+*{ box-sizing:border-box; }
+html,body{ margin:0; padding:0; background:var(--bg); color:var(--text); font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial; }
+.wrap{ max-width:1100px; margin:26px auto; padding:0 16px; }
+
+.top{ display:flex; gap:16px; justify-content:space-between; align-items:flex-start; margin-bottom:16px; }
+h1{ margin:0; font-size:34px; color:var(--gold); letter-spacing:.4px; }
+.sub{ margin-top:6px; color:var(--muted); }
+
+.topRight{ display:flex; flex-direction:column; gap:10px; align-items:flex-end; }
+.mini{ font-size:13px; color:var(--muted); text-align:right; line-height:1.4; }
+
+.card{
+  background:linear-gradient(180deg, var(--card), var(--card2));
+  border:1px solid var(--line);
+  border-radius:14px;
+  padding:16px;
+  margin:14px 0;
+  box-shadow:0 10px 30px rgba(0,0,0,.25);
+}
+
+.title{ font-weight:800; color:var(--gold); margin-bottom:12px; font-size:18px; }
+.label{ font-size:13px; color:var(--muted); margin-bottom:6px; }
+
+.row{ display:flex; gap:10px; align-items:center; flex-wrap:wrap; }
+.row.space{ justify-content:space-between; }
+.grid2{ display:grid; grid-template-columns:1fr 1fr; gap:12px; }
+.grid3{ display:grid; grid-template-columns:1fr 1fr 1fr; gap:12px; }
+
+.box{
+  background:rgba(255,255,255,.03);
+  border:1px solid rgba(255,255,255,.06);
+  border-radius:12px;
+  padding:12px;
+}
+
+.kv{ display:flex; justify-content:space-between; gap:12px; padding:6px 0; border-bottom:1px dashed rgba(255,255,255,.06); }
+.kv:last-child{ border-bottom:0; }
+.mono{ font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono",monospace; }
+.break{ word-break:break-all; }
+
+.hint{ margin-top:8px; font-size:12px; color:var(--muted); }
+.warn{ margin:10px 0 6px; font-size:12px; color:#fcd34d; border-left:3px solid #fcd34d; padding-left:10px; }
+
+.inp{
+  width:100%;
+  padding:12px 12px;
+  border-radius:12px;
+  background:#050814;
+  border:1px solid rgba(255,255,255,.12);
+  color:var(--text);
+  outline:none;
+}
+.inp:focus{ border-color:rgba(212,175,55,.55); box-shadow:0 0 0 3px rgba(212,175,55,.10); }
+
+.btn{
+  padding:11px 14px;
+  border-radius:12px;
+  border:1px solid rgba(212,175,55,.35);
+  background:transparent;
+  color:var(--gold);
+  cursor:pointer;
+  font-weight:700;
+}
+.btn:hover{ border-color:rgba(212,175,55,.65); }
+.btn:disabled{ opacity:.6; cursor:not-allowed; }
+
+.primary{
+  background:linear-gradient(180deg, rgba(212,175,55,.25), rgba(212,175,55,.10));
+  border-color:rgba(212,175,55,.75);
+  color:#ffe9a6;
+}
+.ghost{
+  border-color:rgba(255,255,255,.14);
+  color:var(--text);
+}
+
+.pill{
+  font-size:12px;
+  color:var(--muted);
+  border:1px solid rgba(255,255,255,.10);
+  padding:8px 10px;
+  border-radius:999px;
+  background:rgba(0,0,0,.2);
+}
+
+.pkgRow{
+  display:grid;
+  grid-template-columns:1fr 1fr 1fr;
+  gap:10px;
+  margin-bottom:12px;
+}
+.pkg{
+  border:1px solid rgba(255,255,255,.12);
+  background:rgba(0,0,0,.18);
+  border-radius:14px;
+  padding:14px;
+  text-align:left;
+  cursor:pointer;
+}
+.pkg .pkgName{ color:var(--gold); font-weight:900; font-size:16px; }
+.pkg .pkgSub{ color:var(--muted); font-size:13px; margin-top:6px; }
+.pkg.sel{ border-color:rgba(212,175,55,.7); box-shadow:0 0 0 3px rgba(212,175,55,.10); }
+
+.formGrid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:12px;
+  margin-bottom:8px;
+}
+
+.toast{
+  position:fixed;
+  bottom:22px;
+  left:50%;
+  transform:translateX(-50%);
+  min-width:260px;
+  max-width:90vw;
+  background:#0b1220;
+  border:1px solid rgba(255,255,255,.12);
+  color:var(--text);
+  padding:12px 14px;
+  border-radius:12px;
+  opacity:0;
+  pointer-events:none;
+  transition:opacity .2s ease;
+}
+.toast.show{ opacity:1; }
+
+.foot{
+  margin:18px 0 10px;
+  color:var(--muted);
+  text-align:center;
+  font-size:12px;
+}
+
+@media (max-width: 860px){
+  .grid2, .grid3, .formGrid, .pkgRow{ grid-template-columns:1fr; }
+  .top{ flex-direction:column; align-items:stretch; }
+  .topRight{ align-items:flex-start; }
+}
