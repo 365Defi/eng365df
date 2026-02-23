@@ -633,4 +633,3 @@ setStatus("Please connect wallet.");
 init();
 })();
 
-ถึง
